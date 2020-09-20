@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "PT Sans";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw+12;
+$md2: 760;
+$md3: 480;
+$md4: 319;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+
+body {
+	color: #000;
+	font-size: 14px;
+	background-color: #000;
+
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: all 2s ease 0s;
+
+	&.loaded {}
+
+	&.active {
+		opacity: 1;
+
+		.parallax__wawe {
+			&_1 {
+				transition: all 2s ease 4s;
+				opacity: 1;
+			}
+
+			&_2 {
+				transition: all 2s ease 3.5s;
+				opacity: 1;
+			}
+
+			&_3 {
+				transition: all 2s ease 3s;
+				opacity: 1;
+			}
+
+			&_4 {
+				transition: all 2s ease 2s;
+				opacity: 1;
+			}
+
+			&_5 {
+				transition: all 2s ease 1.5s;
+				opacity: 1;
+			}
+
+			&_6 {
+				transition: all 2s ease 1s;
+				opacity: 1;
+			}
+
+		}
+
+		.parallax__rope {
+			&_1 {
+				transition: all 2s ease 5s;
+				opacity: 1;
+			}
+
+			&_2 {
+				transition: all 2s ease 4s;
+				opacity: 1;
+			}
+
+			&_3 {
+				transition: all 2s ease 3s;
+				opacity: 1;
+			}
+		}
+
+		.parallax__lighthouse {
+			transition: all 1.5s ease 2.5s;
+			opacity: 1;
+			bottom: 5%;
+		}
+	}
+
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+// .container {
+// 	max-width: $mw + px;
+// 	margin: 0 auto;
+// 	width: 100%;
+// 	padding: 50px;
+// 	border-radius: 20px;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+//}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+
+.page {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	min-width: 360px;
+}
+
+.parallax {
+	flex: 1 0 100%;
+	position: relative;
+	overflow: hidden;
+
+	// .parallax__list
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 200px;
+		background: linear-gradient(rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 1)60%);
+	}
+
+	&__list {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+
+		& li {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+	}
+
+	// .parallax__bg
+
+	&__bg {
+		position: absolute;
+		width: 110%;
+		height: 110%;
+		top: -5%;
+		left: -5%;
+		background: url('../img/background.jpg') 50% 100% / cover no-repeat;
+	}
+
+	// .parallax__rope
+
+	&__rope {
+		position: absolute;
+		width: 120%;
+		left: -10%;
+		opacity: 0;
+
+		& img {
+			width: 100%;
+		}
+
+		// .parallax__rope_1
+
+		&_1 {
+			top: 5%;
+			transform: scale(0.9);
+		}
+
+		// .parallax__rope_2
+
+		&_2 {
+			top: 0%;
+			transform: scale(0.95);
+
+		}
+
+		// .parallax__rope_3
+
+		&_3 {
+			top: -10%;
+			transform: scale(1);
+
+		}
+	}
+
+	// .parallax__element
+
+	&__element {
+		position: absolute;
+
+		& span {
+			display: inline-block;
+			transform-origin: 50% 0;
+			height: 280px;
+			width: 280px;
+			margin: 0 0 0 -140px;
+		}
+
+		// .parallax__element_1
+
+		&_1 {
+			top: 40%;
+			left: 17%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-3.png') 0 0 / 100% no-repeat;
+				animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_2
+
+		&_2 {
+			top: 65%;
+			left: 40%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-3.png') 0 0 / 100% no-repeat;
+				animation: swing 2.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_3
+
+		&_3 {
+			top: 68%;
+			left: 50%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-3.png') 0 0 / 100% no-repeat;
+				animation: swing 2.2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_4
+
+		&_4 {
+			top: 45%;
+			left: 80%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-4.png') 0 0 / 100% no-repeat;
+				animation: swing 2.3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_5
+
+		&_5 {
+			top: 28%;
+			left: 10%;
+
+			& span {
+				background: url('../img/clouds/board-birds.png') 0 0 / 100% no-repeat;
+				animation: swing 2.4s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_6
+
+		&_6 {
+			top: 60%;
+			left: 32%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-2.png') 0 0 / 100% no-repeat;
+				animation: swing 2.5s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_7
+
+		&_7 {
+			top: 58%;
+			left: 70%;
+
+			& span {
+				background: url('../img/clouds/board-birds.png') 0 0 / 100% no-repeat;
+				animation: swing 2.6s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+
+		// .parallax__element_8
+
+		&_8 {
+			top: 68%;
+			left: 55%;
+
+			& span {
+				background: url('../img/clouds/board-cloud-4.png') 0 0 / 100% no-repeat;
+				animation: swing 2.7s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			}
+		}
+	}
+
+	// .parallax__wawe
+
+	&__wawe {
+		position: absolute;
+		opacity: 0;
+		left: -100%;
+		width: 300%;
+		// .parallax__wawe_1
+
+		&_1 {
+			bottom: 180px;
+			height: 100px;
+			animation: wave 7.1s 0.1s infinite linear;
+			background: url('../img/waves/wave-paint.png') 0 0 / auto 101% repeat-x;
+		}
+
+		// .parallax__wawe_2
+
+		&_2 {
+			bottom: 160px;
+			height: 100px;
+			animation: wave 6.7s 0.1s infinite linear;
+			background: url('../img/waves/wave-plain.png') 0 0 / auto 101% repeat-x;
+		}
+
+		// .parallax__wawe_3
+
+		&_3 {
+			bottom: 140px;
+			height: 120px;
+			animation: wave 6.2s 0.1s infinite linear;
+			background: url('../img/waves/wave-paint.png') 0 0 / auto 101% repeat-x;
+		}
+
+		// .parallax__wawe_4
+
+		&_4 {
+			bottom: 100px;
+			height: 150px;
+			animation: wave 5.7s 0.1s infinite linear;
+			background: url('../img/waves/wave-plain.png') 0 0 / auto 101% repeat-x;
+		}
+
+		// .parallax__wawe_5
+
+		&_5 {
+			bottom: 70px;
+			height: 180px;
+			animation: wave 5.2s 0.1s infinite linear;
+			background: url('../img/waves/wave-plain.png') 0 0 / auto 101% repeat-x;
+		}
+
+		// .parallax__wawe_6
+
+		&_6 {
+			bottom: 20px;
+			height: 220px;
+			animation: wave 4.7s 0.1s infinite linear;
+			background: url('../img/waves/wave-paint.png') 0 0 / auto 101% repeat-x;
+		}
+	}
+
+	// .parallax__lighthouse
+
+	&__lighthouse {
+		background: url('../img/lighthouse.png') 0 0 no-repeat;
+		width: 320px;
+		height: 560px;
+		position: absolute;
+		right: 10%;
+		bottom: -20%;
+		opacity: 0;
+		animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}
+}
+
+.content {}
+
+
+
+@keyframes swing {
+	0% {
+		transform: rotateZ(10deg);
+	}
+
+	100% {
+
+		transform: rotateZ(-10deg);
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateZ(360deg) translate3d(0, 10%, 0) rotateZ(-360deg);
+	}
+}
+
+@keyframes lighthouse {
+	0% {
+		transform: translate3d(15%, 0, 0) rotateZ(10deg);
+	}
+
+	100% {
+		transform: translate3d(-15%, 0, 0) rotateZ(-10deg);
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>==========\

@@ -1,0 +1,1 @@
+$(document).ready((function(){$(".wrapper").addClass("active"),$(".parallax__list>li").addClass("layer"),$(".parallax__list").parallax()}));
